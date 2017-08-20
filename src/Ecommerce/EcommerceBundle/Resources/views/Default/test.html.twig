@@ -1,0 +1,9 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+    <div class=" col-lg-8 col-lg-offset-4">
+        {{ form_start(form,{'method':'POST','action':'test'}) }}
+            {{ form_widget(form) }}  
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

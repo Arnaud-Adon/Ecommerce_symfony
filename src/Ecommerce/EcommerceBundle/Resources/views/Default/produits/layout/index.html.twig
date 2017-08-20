@@ -1,0 +1,60 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="col-lg-2 col-lg-offset-1">
+                {# include '::moduleUsed/panier.html.twig' #}                
+                {% include '::moduleUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}                 
+                    {% include 'UtilisateursBundle:Default:moduleUsed/utilisateursConnect.html.twig' %}              
+                {% else %}                
+                    {% include 'UtilisateursBundle:Default:moduleUsed/utilisateurs.html.twig' %} 
+                {% endif %}
+                {% render(controller('EcommerceBundle:Panier:menu')) %}
+            </div>
+            <div class="col-lg-9">
+                {% if produits|length != 0 %}
+                    <ul class="thumbnails">
+                        {% for produit in produits %}
+                            <li class="col-lg-3 col-lg-offset-1 ">
+                                <div class="img-thumbnail img_index">
+                                    <img src="{{ produit.image.path }}" alt="{{ produit.image.alt }}" width="200" height="200">
+                                    <div class="caption">
+                                        <h4>{{ produit.nom}}</h4>
+                                        <p>{{ produit.prix|tva(produit.tva.multiplicate) }} Euros</p>
+                                        <a class="btn btn-primary" href="{{ path('presentation', {'id': produit.id })}}">Plus d'infos</a>
+                                        {% if panier[produit.id] is not defined %}
+                                            <a class="btn btn-success" href="{{ path('ajouter',{'id':produit.id})}}">Ajouter au panier</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="row" aria-label="...">
+                        <div class=" col-lg-4 col-lg-offset-4">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                            <li class="disabled"><span>1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>                         
+                            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                {% else %}
+                    Aucun produit
+                {% endif %}
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

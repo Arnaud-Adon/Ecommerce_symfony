@@ -1,0 +1,8 @@
+utilisateurs_homepage:
+    path:     /
+    defaults: { _controller: UtilisateursBundle:Default:index }
+    
+factures:
+    path:     /profile/factures
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:facture }
+    
