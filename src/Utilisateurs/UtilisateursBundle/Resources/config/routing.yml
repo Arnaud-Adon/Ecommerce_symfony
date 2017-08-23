@@ -2,7 +2,24 @@ utilisateurs_homepage:
     path:     /
     defaults: { _controller: UtilisateursBundle:Default:index }
     
+utilisateurs_adresses:
+    path:     /profile/adresses
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:adresse }
+    
+update_adresses:
+    path:     /profile/adresses/update/{id}
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:updateAdresse }
+    
+      
+delete_adresses:
+    path:     /profile/adresse/delete/{id}
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:deleteAdresse }
+    
 factures:
     path:     /profile/factures
     defaults: { _controller: UtilisateursBundle:Utilisateurs:facture }
+    
+facturesPDF:
+    path:   /profile/factures/pdf/{id}
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:facturePDF }
     

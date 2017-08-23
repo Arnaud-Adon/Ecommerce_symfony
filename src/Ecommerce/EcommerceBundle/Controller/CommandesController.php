@@ -21,7 +21,7 @@ class CommandesController extends Controller {
         $panier=$session->get('panier');
         $commande=array();
         $totalHT=0;
-        $totalTTC = 0;
+        $totalTVA = 0;
         
         $facturation =  $em->getRepository('UtilisateursBundle:UtilisateursAdresses')->find($adresse['facturation']);
         $livraison =  $em->getRepository('UtilisateursBundle:UtilisateursAdresses')->find($adresse['livraison']);
@@ -31,18 +31,24 @@ class CommandesController extends Controller {
             $prixHT=($produit->getPrix() * $panier[$produit->getId()]);
             $prixTTC=($produit->getPrix() * $panier[$produit->getId()]) / $produit->getTva()->getMultiplicate();
             $totalHT += $prixHT ;
-            $totalTTC += $prixTTC;
+            
+           
             
             if(!isset($commande['tva']['%'.$produit->getTva()->getValeur()])){
                 $commande['tva']['%'.$produit->getTva()->getValeur()]= round($prixTTC - $prixHT,2);
+               
             }else{
                 $commande['tva']['%'.$produit->getTva()->getValeur()] += round($prixTTC - $prixHT,2);
             }
+            $totalTVA += round($prixTTC - $prixHT,2);
             $commande['produit'][$produit->getId()] = array('reference' =>$produit->getNom(),
                                                             'quantite'=>$panier[$produit->getId()],
                                                             'prixHT'=>round($produit->getPrix(),2),
                                                             'prixTTC'=>round($produit->getPrix() / $produit->getTva()->getMultiplicate(),2));
-        }    
+        } 
+        
+             
+        
             $commande['livraison']= array('prenom'=>$livraison->getPrenom(),
                                            'nom'=>$livraison->getNom(),
                                            'adresse'=>$livraison->getAdresse(),
@@ -60,7 +66,7 @@ class CommandesController extends Controller {
                                            'complement'=>$facturation->getComplement());
             
             $commande['prixHT'] = round($totalHT,2);
-             $commande['prixTTC'] = round($totalTTC,2);
+             $commande['prixTTC'] = round($totalHT + $totalTVA ,2);
              $commande['token'] = bin2hex($generator->nextBytes(20));
              
              
@@ -135,7 +141,7 @@ class CommandesController extends Controller {
         
         
         //retour à la page de presentations des produits
-        return $this->redirect($this->generateUrl('produits'));
+        return $this->redirect($this->generateUrl('factures'));
         
     }
 

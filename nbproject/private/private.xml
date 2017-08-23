@@ -3,48 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Twig/Extension/MontantTvaExtension.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/panier/layout/panier.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/recherche/moduleUsed/recherche.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Entity/Categories.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/moduleUsed/utilisateursConnect.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/FOSUserBundle/views/Registration/email.txt.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Form/UtilisateursAdressesType.php</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Services/GetReference.php</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/layout/adresse.html.twig</file>
             <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Repository/ProduitsRepository.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/panier/layout/livraison.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/ProduitsController.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/categories/moduleUsed/menu.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Entity/Utilisateurs.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/panier/moduleUsed/panier.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/produits/layout/index.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/PanierController.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/FOSUserBundle/views/layout.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Entity/Commandes.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Form/RechercheType.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/CategoriesController.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/TestController.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/moduleUsed/utilisateurs.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/DataFixtures/ORM/TvaData.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/web/css/style.css</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/panier/layout/validation.html.twig</file>
             <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/CommandesController.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/config/security.yml</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Entity/UtilisateursAdresses.php</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/panier/layout/validation.html.twig</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/layout/updateAdresse.html.twig</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Repository/CommandesRepository.php</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Controller/ProduitsController.php</file>
             <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/config/routing/routingProduits.yml</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Entity/Tva.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/test.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/AppBundle/Tests/Controller/DefaultControllerTest.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/views/moduleUsed/navigation.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Listener/RedirectionListener.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/views/Default/produits/layout/presentation.html.twig</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Twig/Extension/TvaExtension.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Entity/Produits.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/DataFixtures/ORM/ProduitsData.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Form/ProduitsType.php</file>
-            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/Resources/config/routing/routingPanier.yml</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/layout/pdf.html.twig</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Resources/views/Default/layout/facture.html.twig</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Ecommerce/EcommerceBundle/DependencyInjection/EcommerceExtension.php</file>
+            <file>file:/C:/wamp64/www/symfony/ecommerce/src/Utilisateurs/UtilisateursBundle/Controller/UtilisateursController.php</file>
         </group>
     </open-files>
 </project-private>

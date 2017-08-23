@@ -13,6 +13,9 @@ services:
         tags:
             - { name: twig.extension }
             
+    ecommerce.html2pdf:
+        class: Ecommerce\EcommerceBundle\Services\FacturationPDF
+            
     redirectionListener:
         class: Ecommerce\EcommerceBundle\Listener\RedirectionListener
         arguments: ["@service_container","@session"]

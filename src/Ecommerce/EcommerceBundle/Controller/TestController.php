@@ -34,7 +34,7 @@ class TestController extends Controller {
             echo $form['description']->getData();
             
             /*if($form->isValid()){
-                $em=$this->getDoctrine();
+                $em=$this->getDoctrine()->getManager();
                 $em->persist($form);
                 $em->flush();
             }*/

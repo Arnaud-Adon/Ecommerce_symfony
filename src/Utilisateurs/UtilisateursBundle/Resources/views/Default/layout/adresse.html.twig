@@ -1,0 +1,47 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+        {% include '::moduleUsed/navigation.html.twig' %}       
+        {% include 'UtilisateursBundle:Default:moduleUsed/utilisateursConnect.html.twig' %}
+        </div>
+
+        <div class="col-lg-9">          
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">{{ flashMessage }}</div>
+                {% endfor%}
+            
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger">{{ flashMessage }}</div>
+                {% endfor%}
+            <h2>Factures</h2>            
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Vos adresses de livraison et de facturation</th>                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                       {% if adresses |length == 0 %}
+                           <tr>
+                               <td colspan=""><center>Vous n'avez aucune adresse</center></td>
+                           </tr> 
+                       {% endif %}
+                       
+                       {% for adresse in adresses %}
+                        <tr>                          
+                            <td>{{ adresse.adresse }} {{ adresse.cp }} {{ adresse.ville }} {{ adresse.complement }}</td><td><a href="{{path('update_adresses',{'id':adresse.id})}}"><i class="glyphicon glyphicon-pencil"></i></a></td><td><a href="{{path('delete_adresses',{'id':adresse.id})}}"><i class="glyphicon glyphicon-trash"></i></a></td>                            
+                        </tr>
+                       {% endfor %}
+                       
+                    </tbody>
+                </table>          
+
+        </div>
+
+    </div>
+</div>
+                            
+{% endblock %}

@@ -121,8 +121,7 @@ class PanierController extends Controller
             }
             
         }
-        $session=new Session();
-        var_dump($session);
+        $session=new Session();        
               
         return $this->render('EcommerceBundle:Default:panier/layout/livraison.html.twig', array('utilisateur' => $utilisateur, 'form' => $form->createView()));
         

@@ -14,7 +14,7 @@ class UtilisateursAdressesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('telephone')->add('adresse')->add('cp')->add('pays')->add('ville')->add('complement',null, array('required' => false));//->add('utilisateur');
+        $builder->add('nom')->add('prenom')->add('telephone')->add('adresse')->add('cp',null,array('label'=>'Code Postale'))->add('pays')->add('ville')->add('complement',null, array('required' => false));//->add('utilisateur');
     }
     
     /**

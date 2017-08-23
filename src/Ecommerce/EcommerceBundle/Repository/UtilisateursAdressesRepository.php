@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class UtilisateursAdressesRepository extends EntityRepository
 {
+    public function byAdresse($user){
+        $qb= $this->createQueryBuilder('a')
+                ->select('a')
+                ->where('a.utilisateur = :utilisateur')
+                ->orderBy('a.id')
+                ->setParameter('utilisateur',$user);
+        
+      return  $qb->getQuery()->getResult();
+    }
 }
