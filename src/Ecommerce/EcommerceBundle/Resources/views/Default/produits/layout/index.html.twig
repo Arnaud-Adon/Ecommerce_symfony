@@ -16,9 +16,9 @@
             </div>
             <div class="col-lg-9">
                 {% if produits|length != 0 %}
-                    <ul class="thumbnails">
+                    <ul class="thumbnails products">
                         {% for produit in produits %}
-                            <li class="col-lg-3 col-lg-offset-1 ">
+                            <li class="col-lg-3  ">
                                 <div class="img-thumbnail img_index">
                                     <img src="{{ produit.image.path }}" alt="{{ produit.image.alt }}" width="200" height="200">
                                     <div class="caption">

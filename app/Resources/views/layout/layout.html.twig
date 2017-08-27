@@ -2,94 +2,136 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="keywords" content="{% block motsCles %}{% endblock %}">
+        <meta name="description" content="{% block description %}{% endblock %}">
         <title>{% block title %}Boutique E-commerce{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <meta name="keywords" content="{% block motsCles %}{% endblock %}">
-    <meta name="description" content="{% block description %}{% endblock %}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/ecommerceStyle.css')}}" />
+        {% endblock %}
 
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
 
-                <!--<button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                 </button> -->
-                <div class="row" style="margin-bottom: 10px;">
-                    <h3><a class="col-lg-5 col-lg-offset-1" href="{{ path('produits') }}">Boutique E-commerce</a></h3>
-                    <div class="col-lg-2 col-lg-offset-3">
-                        {% render(controller('EcommerceBundle:Produits:recherche')) %}  
+
+
+
+
+
+    </head>
+    <body>
+        <div class="nav-bar navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+
+                    <!--<button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button> -->
+                    <div class="nav-top row">
+                        <h3><a class="col-lg-5 col-lg-offset-1" href="{{ path('produits') }}">Fruits & Légumes</a></h3>
+                        <div class="col-lg-2 col-lg-offset-3">
+                            {% render(controller('EcommerceBundle:Produits:recherche')) %}  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <marquee   loop="infinite" width="100%" direction="left" bgcolor="white"><h3><center>Bienvenue sur le site d'achat de produits de première qualité | Différents fruits et légumes sont disponibles.</center></h3></marquee>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+                        
+        <div class="header-index row">
+            <div class="col-lg-12">
+                <div class="col-lg-4 col-lg-offset-1">
+                    <h1 class="header-index-h1">Bienvenue sur le site de vente de fruits et légumes frais</h1>
+                    <p class="header-index-p">Une multitude de produits tel que, au niveau des fruit, des oranges et raisins et des légumes tel que des tomates, piments ou encore des poivrons.</p>
+                    <button class="header-index-btn"><a href="#content_block">Voir nos différent produit</a></button>
+                </div>                
+            </div>
+        </div>
+
+        <div class="services container-fluid">
+            <div class="row">
+                <h1 class="row text-bottom-20"><center>Nos différents services    <span class="glyphicon glyphicon-send"></span></center></h1>
+                <h4 class="text-bottom-80"><center>De la commande à la livraison</center></h4>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="services-products col-lg-2 col-lg-offset-3">
+                            <center><img class="text-bottom-20" src="{{ asset('img/fruit.png')}}"></center>
+                            <p class="text-size-18">Nous vous assurrons une multitude de fruits et légumes frais.</p>
+                        </div>
+
+                        <div class="services-send col-lg-2 col-lg-offset-2">
+                            <center><img class="text-bottom-20" src="{{ asset('img/vehicles.png')}}"></center>
+                            <p class="text-size-18">Nous vous livrons sous un délais maximum de 3 jours.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>                
+
+
+
+    <div id="content_block" class="content_block">
+        {% block body %}{% endblock %}
     </div>
 
-<div class="content_block" style="padding-top: 100px;">
-    {% block body %}{% endblock %}
-</div>
+
+    <footer class="footer-bg">      
+        <div class="container-fluid">
+            <div class="row">
+                <div class="social-bar col-lg-12">
+                    <div class="col-lg-3 col-lg-offset-3">
+                        <a href="#"><img src="{{ asset('img/facebook.png')}}"></a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="#"><img src="{{ asset('img/google.png')}}"></a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="#"><img src="{{ asset('img/twitter.png')}}"></a>
+                    </div> 
+                </div>
+            </div>
 
 
-<footer id="footer" class="bg-primary text-white" style="margin: 0;padding: 0;">
-    <hr>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="social-bar">
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-2">
+                    <h4>Informations</h4>
+                    <ul class="nav nav-stacked">
+                        {% render(controller('PagesBundle:Pages:menu')) %}                    
+                    </ul>
+                </div> 
+
+
                 <div class="col-lg-3">
-                    <strong>Reseau sociaux</strong>
+                    <h4>Notre entrepôt</h4>
+                    <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;{{ adresse }}</p>
                 </div>
-                <div class="col-lg-3">
-                    <a href=""><img src="{{ asset('img/1498308990_thin_B-89.png')}}"></a>
+
+                <div class="col-lg-2">
+                    <h4>Nous contacter</h4>
+                    <p><i class="glyphicon glyphicon-phone"></i>&nbsp;Tel: {{telephone}}</p>
+                    <p><i class="glyphicon glyphicon-print"></i>&nbsp;Fax: {{ fax }}</p>
                 </div>
-                <div class="col-lg-3">
-                    <a href=""><img src="{{ asset('img/1498308977__twitter_bird.png')}}"></a>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-5">
+                    <p>&copy; Copyright {{ "now"|date('Y') }} - ArnaudAdon</p>
                 </div>
-                <div class="col-lg-3">
-                    <a href=""><img src="{{ asset('img/1498308967_youtube_online_social_media.png')}}"></a>
-                </div>
-                <div class=""></div>
 
             </div>
         </div>
-        <hr>
+    </footer>	
 
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-1  bg-inverse">
-                <h4>Informations</h4>
-                <ul class="nav nav-stacked">
-                    {% render(controller('PagesBundle:Pages:menu')) %}                    
-                </ul>
-            </div> 
-
-
-            <div class="col-lg-4">
-                <h4>Notre entrepôt</h4>
-                <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;{{ adresse }}</p>
-            </div>
-
-            <div class="col-lg-2">
-                <h4>Nous contacter</h4>
-                <p><i class="glyphicon glyphicon-phone"></i>&nbsp;Tel: {{telephone}}</p>
-                <p><i class="glyphicon glyphicon-print"></i>&nbsp;Fax: {{ fax }}</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-5">
-                <p>&copy; Copyright {{ "now"|date('Y') }} - ArnaudAdon</p>
-            </div>
-
-        </div>
-    </div>
-</footer>	
-<script src="{{ asset('js/jquery-3.2.1.min.js')}}"></script>
-<script src="{{ asset('js/bootstrap.min.js')}}"></script>
-{% block javascripts %}{% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    {% endblock %}
 </body>
 </html>

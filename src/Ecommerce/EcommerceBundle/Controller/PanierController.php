@@ -24,13 +24,16 @@ use Ecommerce\EcommerceBundle\Entity\Produits;
  */
 class PanierController extends Controller
 {
+    //pour la gestion du panier du menu en bootstrap | gestion des article  dans le panier
     public function menuAction(){
         
         $session = new Session();
         
         if(!$session->has('panier')){
+            //si il n'y a pas de session panier les article sont à 0
             $articles = 0;
         
+            //et on retourne le nombre d'article sur le module pour l'affichage
             return $this->render('EcommerceBundle:Default:panier/moduleUsed/panier.html.twig',array('articles' => $articles));
         }
         else {

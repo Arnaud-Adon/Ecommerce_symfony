@@ -1,0 +1,117 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 août 2017, 20:51:08
+    Author     : Arnaud
+*/
+
+.content_block{
+    padding-top: 170px;    
+    background-image: url('../img/fruits_légumes.jpg');
+}
+
+.nav-top{   
+    background: #efefef;
+    
+    
+}
+
+.nav-bar{
+     background: #efefef;
+     /*position hauteur epaisseur couleur*/
+     box-shadow: 0 5px 30px #efefef;
+}
+
+/************* header **************/
+
+.header-index{
+    padding-top: 170px;
+    min-height: 80vh;
+    color: #fff;
+    background-image: url('../img/presentation_fruit_legume.jpg');
+}
+
+.header-index-h1{
+    padding-bottom: 50px;
+}
+
+.header-index-p{
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+.header-index-btn{
+    padding: 15px;
+    font-size: 30px;   
+    background: #fcc238;
+    border: 1px solid #fcc238;
+    border-radius: 20px;
+}
+
+.header-index-btn a{
+    text-decoration: none;
+    color: #000;
+}
+
+.header-index-btn:hover{
+    opacity: 0.2;
+}
+
+
+/***************** Produit *******************/
+
+.img_index{
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.products li{
+    list-style-type: none;
+}
+
+
+.services{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #fff;
+}
+
+.text-bottom-20{
+    margin-bottom: 20px;
+}
+
+.text-bottom-80{
+    margin-bottom: 80px;
+}
+
+.text-size-18{
+    font-size: 18px;
+    text-align: center;
+}
+
+/**************** footer ***************/
+
+.footer-bg{
+    bottom: 0;
+    min-height: 30vh;
+    background-color: silver;
+}
+
+.social-bar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+
+/************* fosuser ***************/
+.fosuser-padding{
+    min-height: 50vh;
+    padding: 0 0 60px 0;
+    color: #fff;
+}
+
