@@ -1,0 +1,14 @@
+{% extends "::layout/layout.admin.html.twig"%}
+
+{% block body %}
+    <h1>Page creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Créer la page" class="btn btn-success"/>
+    {{ form_end(form) }}
+
+    <br>
+    <button class="btn btn-default"><a href="{{ path('adminPages_index') }}" style="color:#000;text-decoration: none;">Retour à la liste</a></button>
+        
+{% endblock %}

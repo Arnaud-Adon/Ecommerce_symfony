@@ -107,6 +107,19 @@ and open the template in the editor.
     border-bottom: 2px solid #fff;
 }
 
+/**************** Panier *******************/
+.panier-bg-fff{
+    color: #fff;
+}
+
+.panier-bg-000{
+    color: #000;
+}
+
+.panier-padding{
+    padding-bottom: 40px;
+}
+
 
 /************* fosuser ***************/
 .fosuser-padding{
@@ -115,3 +128,12 @@ and open the template in the editor.
     color: #fff;
 }
 
+/******************* Administration *********************/
+
+.admin-body{
+     padding-top: 150px;    
+}
+.admin-nav-top{
+     background: #efefef;
+     margin-bottom: 50px;
+}

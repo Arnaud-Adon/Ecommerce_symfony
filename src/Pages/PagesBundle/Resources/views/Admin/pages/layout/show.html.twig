@@ -1,0 +1,38 @@
+{% extends "::layout/layout.admin.html.twig"%}
+
+{% block body %}
+    <h1>Description de la page</h1>
+
+    <table class="table table-condensed">
+        <tbody>
+            <!--<tr>
+                <th>Id</th>
+                <td>{{ page.id }}</td>
+            </tr>
+            <tr>-->
+                <th>Titre</th>
+                <td>{{ page.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td style="height:20px;overflow: hidden;">{{ page.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="col-lg-12">
+        <div class="col-lg-4">
+            <button class="btn btn-default"><a href="{{ path('adminPages_index') }}" style="color: #000;text-decoration: none;">Retour à la liste</a></button>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-success"><a style="color: #fff;text-decoration: none;" href="{{ path('adminPages_edit', { 'id': page.id }) }}">Modifier la page</a></button>
+        </div>
+        <div class="col-lg-4">
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Supprimmer la page" class="btn btn-danger" style="color: #fff;text-decoration: none;">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>
+
+{% endblock %}

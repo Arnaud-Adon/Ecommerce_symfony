@@ -1,0 +1,23 @@
+{% extends "::layout/layout.admin.html.twig"%}
+
+{% block body %}
+    <h1>Modifier la page</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn btn-primary" type="submit" value="Valider la modification" />
+    {{ form_end(edit_form) }}
+    
+    <br><br>
+
+    <div class="col-lg-12">
+        <div class="col-lg-3">
+            <button class="btn btn-default"><a style="color: #000;text-decoration: none;" href="{{ path('adminPages_index') }}">Retour à la liste</a></button>
+        </div>
+        <div class="col-lg-4">
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimmer la page" class="btn btn-danger" style="color: #fff;text-decoration: none;">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>   
+{% endblock %}

@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ecommerce\EcommerceBundle\Form\RechercheType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Ecommerce\EcommerceBundle\Entity\Categories;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Description of produitsController
@@ -31,22 +32,26 @@ class ProduitsController extends Controller
         return $this->render('EcommerceBundle:Default:produits/layout/index.html.twig', array('produits' => $produits));
     }
     
-    public function produitsAction(Categories $categorie = null)
+    public function produitsAction(Request $request, Categories $categorie = null)
     {
         $em = $this->getDoctrine()->getManager();        
         $session = new Session();
         
         if(!is_null($categorie))
-            $produits = $em->getRepository('EcommerceBundle:Produits')->byCategorie($categorie);        
+            $findProducts = $em->getRepository('EcommerceBundle:Produits')->byCategorie($categorie);        
         else
-            $produits = $em->getRepository('EcommerceBundle:Produits')->findBy(array('disponible'=> 1));
+            $findProducts = $em->getRepository('EcommerceBundle:Produits')->findBy(array('disponible'=> 1));
         
         if($session->has('panier'))
             $panier = $session->get('panier');
         else
             $panier = false;
         
-        
+         //La pagination
+        $paginator = $this->get('knp_paginator');
+        // Arguments | recuperations des produits | prendre la page de départ dans la requete | le nombre de produits par page
+        $produits  = $paginator->paginate($findProducts, $request->query->getInt('page',1), 3);
+    
         return $this->render('EcommerceBundle:Default:produits/layout/index.html.twig', array('produits' =>  $produits, 'panier' => $panier));
     }
     
