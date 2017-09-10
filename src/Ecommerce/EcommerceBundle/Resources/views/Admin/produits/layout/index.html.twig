@@ -1,0 +1,36 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-12">
+    <h1>Liste des produits</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>              
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Disponible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>              
+                <td><strong>{{ produit.nom }}</strong></td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.prix }}€</td>
+                <td>{% if produit.disponible %}Oui{% else %}Non{% endif %}</td>
+                <td>                
+                    <a href="{{ path('adminProduits_show', { 'id': produit.id }) }}" style="padding-right: 10px;"><i class="glyphicon glyphicon-eye-open"></i></a>                      
+                    <a href="{{ path('adminProduits_edit', { 'id': produit.id }) }}"><i class="glyphicon glyphicon-pencil"></i></a>                       
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+        <a href="{{ path('adminProduits_new') }}" style="color:green;text-decoration: none">Créer un nouveau produit <i class="glyphicon glyphicon-plus"></i></a>
+    </div>
+{% endblock %}

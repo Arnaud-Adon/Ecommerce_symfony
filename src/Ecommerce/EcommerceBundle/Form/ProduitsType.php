@@ -5,10 +5,10 @@ namespace Ecommerce\EcommerceBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Ecommerce\EcommerceBundle\Form\MediaType;
+use Ecommerce\EcommerceBundle\Form\TvaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
+
 
 class ProduitsType extends AbstractType
 {
@@ -17,7 +17,13 @@ class ProduitsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('description')->add('prix')->add('disponible')->add('categorie')->add('image')->add('tva')->add('Valider', SubmitType::class);
+        $builder->add('nom')
+                ->add('description')
+                ->add('prix')
+                ->add('disponible')
+                ->add('image', MediaType::class)
+                ->add('tva', EntityType::class, array('class'=>'EcommerceBundle:Tva','choice_label'=>'getNom'))
+                ->add('categorie', EntityType::class, array('class'=>'EcommerceBundle:Categories','choice_label'=>'getNom'));
     }
     
     /**
@@ -37,6 +43,5 @@ class ProduitsType extends AbstractType
     {
         return 'ecommerce_ecommercebundle_produits';
     }
-
 
 }

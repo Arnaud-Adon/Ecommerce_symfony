@@ -1,9 +1,0 @@
- #ajouter:
-    #path:     /test
-    #defaults: { _controller: EcommerceBundle:Test:ajouter}
-    
-    
-#test:
-    #path:     /test
-    #defaults: { _controller: EcommerceBundle:Test:testForm}
-    
