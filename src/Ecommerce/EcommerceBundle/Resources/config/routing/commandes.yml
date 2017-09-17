@@ -8,8 +8,11 @@ adminCommandes_show:
     defaults: { _controller: "EcommerceBundle:CommandesAdmin:show" }
     methods:  GET
 
-
 adminCommandes_delete:
     path:     /{id}/delete
     defaults: { _controller: "EcommerceBundle:CommandesAdmin:delete" }
     methods:  DELETE
+
+adminCommandesFactures:
+    path:   /facture/{id}
+    defaults: { _controller: EcommerceBundle:CommandesAdmin:adminFacturePDF }

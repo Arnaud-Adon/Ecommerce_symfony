@@ -1,0 +1,6 @@
+adminUtilisateursAdresses_show:
+    path:     /{id}/adresses/show
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdressesAdmin:show" }
+    methods:  GET
+
+

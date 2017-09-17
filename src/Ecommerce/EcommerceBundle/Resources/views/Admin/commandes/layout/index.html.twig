@@ -1,7 +1,7 @@
 {% extends '::layout/layout.admin.html.twig' %}
 
 {% block body %}
-    <h1>Commandes list</h1>
+    <h1>Liste des commandes</h1>
 
     <table class="table table-condensed">
         <thead>
@@ -18,7 +18,7 @@
                     <td>{{ commande.utilisateur.username }}</td>                    
                     <td>             
                         <a href="{{ path('adminCommandes_show', { 'id': commande.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{{ path('facturesPDF', {'id': commande.id}) }}"><i class="glyphicon glyphicon-pencil"></i></a>    
+                        <a href="{{ path('adminCommandesFactures', {'id': commande.id}) }}"><i class="glyphicon glyphicon-euro"></i></a>    
                     </td>
                 </tr>
             {% endfor %}

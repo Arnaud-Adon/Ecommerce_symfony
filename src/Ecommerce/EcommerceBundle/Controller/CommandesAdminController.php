@@ -123,7 +123,7 @@ class CommandesAdminController extends Controller
         ;
     }
     
-    public function facturePDFAction($id){
+    public function adminFacturePDFAction($id){
         $em = $this->getDoctrine()->getManager();
         $session= new Session();
         

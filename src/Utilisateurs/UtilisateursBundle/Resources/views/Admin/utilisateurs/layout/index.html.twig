@@ -1,0 +1,37 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des utilisateurs</h1>
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>email</th>
+                <th>Compte activé</th>
+                <th>Dernière connexion</th>
+                <th>Statut</th>         
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for utilisateur in utilisateurs %}
+                <tr>                 
+                    <td>{{ utilisateur.username }}</td>
+                    <td>{{ utilisateur.email }}</td>
+                    <td>{% if utilisateur.enabled %}Oui{% else %}Non{% endif %} </td>
+                    <td>{# utilisateur.lastLogin|date('Y-m-d H:i:s') #}</td>
+                    <td></td>               
+                    <td>             
+                        {% if utilisateur.adresses |length != 0  %}      
+                        <a href="{{ path('adminUtilisateursAdresses_show', { 'id': utilisateur.id}) }}" title="Adresses de l'utilisateur" style="margin-right:10px;"><i class="glyphicon glyphicon-map-marker"></i></a>
+                        {% endif %}
+                        {% if utilisateur.commandes |length != 0  %}  
+                        <a href="{{ path('adminUtilisateursFactures_show', { 'id': utilisateur.id }) }}" title="Factures de l'utilisateur"><i class="glyphicon glyphicon-euro"></i></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+{% endblock %}

@@ -1,0 +1,6 @@
+adminUtilisateursFactures_show:
+    path:     /{id}/factures/show
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdressesAdmin:show" }
+    methods:  GET
+
+

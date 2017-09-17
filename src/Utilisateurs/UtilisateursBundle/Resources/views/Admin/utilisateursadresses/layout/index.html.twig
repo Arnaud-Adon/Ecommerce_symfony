@@ -1,0 +1,37 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Adresses de l'utilisateurs</h1>
+
+    <table class="table table-condensed">
+        <thead>
+            <tr><th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Cp</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Complement</th></tr>           
+        </thead>
+        <tbody>
+            {% for utilisateursAdress in utilisateur.adresses %}
+                <tr>                                                
+                    <td>{{ utilisateursAdress.nom }}</td>                             
+                    <td>{{ utilisateursAdress.prenom }}</td>                             
+                    <td>{{ utilisateursAdress.telephone }}</td>                             
+                    <td>{{ utilisateursAdress.adresse }}</td>                            
+                    <td>{{ utilisateursAdress.cp }}</td>                             
+                    <td>{{ utilisateursAdress.pays }}</td>                               
+                    <td>{{ utilisateursAdress.ville }}</td>                               
+                    <td>{{ utilisateursAdress.complement }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('adminUtilisateurs_index') }}" style="color:#000;text-decoration: none;">Retour à la liste des utilisateurs</a>
+
+
+
+{% endblock %}

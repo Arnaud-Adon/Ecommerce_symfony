@@ -23,3 +23,14 @@ facturesPDF:
     path:   /profile/factures/pdf/{id}
     defaults: { _controller: UtilisateursBundle:Utilisateurs:facturePDF }
     
+utilisateurs_adminUtilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing/utilisateurs.yml"
+    prefix:   /admin/utilisateurs
+    
+utilisateurs_adminUtilisateursAdresses:
+    resource: "@UtilisateursBundle/Resources/config/routing/utilisateursadresses.yml"
+    prefix:   /admin/utilisateurs/adresses
+    
+utilisateurs_adminUtilisateursFactures:
+    resource: "@UtilisateursBundle/Resources/config/routing/utilisateursfactures.yml"
+    prefix:   /admin/utilisateurs/factures

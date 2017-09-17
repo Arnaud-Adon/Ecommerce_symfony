@@ -4,12 +4,11 @@ namespace Utilisateurs\UtilisateursBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Utilisateurs\UtilisateursBundle\Form\UtilisateursAdressesType;
-use Utilisateurs\UtilisateursBundle\Entity\UtilisateursAdresses;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 
 class UtilisateursController extends Controller
-{
+{   
     public function factureAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -67,15 +66,12 @@ class UtilisateursController extends Controller
                 
     }
     
-     public function updateAdresseAction($id){
+     public function updateAdresseAction(Request $request ,$id){
             $session= new Session();
             $em=$this->getDoctrine()->getManager();
             $adresse = $em->getRepository('UtilisateursBundle:UtilisateursAdresses')->find($id);
             $form=$this->createForm(new UtilisateursAdressesType(),$adresse);
-            $request= Request::createFromGlobals();
-                      
-            
-            
+       
             if($request->getMethod() == 'POST'){
                 
                 $form->handleRequest($request); 

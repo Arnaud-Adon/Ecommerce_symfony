@@ -1,0 +1,4 @@
+adminUtilisateurs_index:
+    path:     /
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:index"}
+    methods:  GET

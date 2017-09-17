@@ -1,0 +1,33 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des commandes de {{utilisateur.username}}</h1>
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <td>Référence </td>
+                <th>Date de la commande</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if utilisateur.commandes|length == 0  %}
+                <tr>
+                    <td>Il n'y a aucune facture pour le moment.</td>
+                <tr>
+            {% endif %}
+            {% for facture in utilisateur.commandes %}
+                <tr>    
+                    <td>{{facture.reference}}</td>
+                    <td>{{ facture.date|date('d/m/Y H:m:s') }}</td> 
+                    <td>{{facture.commande.prixTTC}} €</td>
+                    <td><a href="{{path('adminCommandesFactures',{'id':facture.id}) }}" title="Visualiser la facture"><i class="glyphicon glyphicon-refresh"></i></a></td>                 
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+            
+            <a class="btn btn-default" href="{{ path('adminUtilisateurs_index') }}" style="color:#000;text-decoration: none;">Retour à la liste des utilisateurs</a>
+{% endblock %}
