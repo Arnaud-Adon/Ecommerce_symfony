@@ -1,0 +1,28 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Catégorie : {{ category.nom }}</h1>
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ category.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="col-lg-12">
+        <div class="col-lg-4">
+            <button class="btn btn-default"><a href="{{ path('adminCategories_index') }}" style="color:#000;text-decoration: none;">Retour à la liste des catégories</a></button>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-primary"><a href="{{ path('adminCategories_edit', { 'id': category.id }) }}" style="color:#fff;text-decoration: none;">Modifier la catégorie</a></button>
+        </div>
+        <div class="col-lg-4">
+            {{ form_start(delete_form) }}
+            <input class="btn btn-danger" type="submit" value="Supprimmer la catégorie">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>  
+{% endblock %}

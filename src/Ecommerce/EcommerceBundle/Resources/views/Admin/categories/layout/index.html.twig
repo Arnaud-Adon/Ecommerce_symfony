@@ -1,0 +1,28 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des catégories</h1>
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>             
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>               
+                <td>{{ category.nom }}</td>
+                <td>                   
+                    <a href="{{ path('adminCategories_show', { 'id': category.id }) }}" style="margin-right: 10px;"><i class="glyphicon glyphicon-eye-open"></i></a>                      
+                    <a href="{{ path('adminCategories_edit', { 'id': category.id }) }}"><i class="glyphicon glyphicon-pencil"></i></a>                       
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <a href="{{ path('adminCategories_new') }}" style="color:green;text-decoration: none">Créer une nouvelle catégorie <i class="glyphicon glyphicon-plus"></i></a>
+      
+{% endblock %}

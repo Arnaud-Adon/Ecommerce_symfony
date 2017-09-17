@@ -6,7 +6,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Ecommerce\EcommerceBundle\Form\MediaType;
-use Ecommerce\EcommerceBundle\Form\TvaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 

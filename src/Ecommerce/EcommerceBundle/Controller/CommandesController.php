@@ -4,12 +4,9 @@ namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ecommerce\EcommerceBundle\Entity\Commandes;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Utilisateurs\UtilisateursBundle\Entity\UtilisateursAdresses;
-use Ecommerce\EcommerceBundle\Entity\Produits;
-use Symfony\Component\Security\Core\Util\SecureRandomInterface;
+
 
 class CommandesController extends Controller {
     

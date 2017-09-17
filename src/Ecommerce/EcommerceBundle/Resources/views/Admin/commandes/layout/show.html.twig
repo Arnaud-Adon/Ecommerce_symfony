@@ -1,0 +1,41 @@
+{% extends '::layout/layout.admin.html.twig' %}
+
+{% block body %}
+    <h1>Commande</h1>
+
+    <table class="table table-condensed">
+        <tbody>          
+            <tr>
+                <th>Valider</th>
+                <td>{% if commande.valider %}Oui{% else %}Non{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if commande.date %}{{ commande.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Reference de la commande</th>
+                <td>{{ commande.reference }}</td>
+            </tr>
+            <tr>
+                <th>Client</th>
+                <td>{{ commande.utilisateur.username}}</td>
+            </tr>
+            <tr>
+                <th>Commande</th>
+                <td>{# if commande.commande %}{{ commande.commande|join(', ') }}{% endif #}</td>
+            </tr>
+        </tbody>
+    </table>
+
+  <div class="col-lg-12">
+      <div class="col-lg-6">
+            <a class="btn btn-default" href="{{ path('adminCommandes_index') }}" style="color:#000;text-decoration: none;">Retour à la  liste des commandes</a>
+      </div>
+      <div class="col-lg-6">
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Supprimmer la commande">
+            {{ form_end(delete_form) }}
+      </div>
+  </div>
+{% endblock %}

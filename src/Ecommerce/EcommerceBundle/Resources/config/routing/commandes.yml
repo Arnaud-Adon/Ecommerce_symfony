@@ -1,0 +1,15 @@
+adminCommandes_index:
+    path:     /
+    defaults: { _controller: "EcommerceBundle:CommandesAdmin:index" }
+    methods:  GET
+
+adminCommandes_show:
+    path:     /{id}/show
+    defaults: { _controller: "EcommerceBundle:CommandesAdmin:show" }
+    methods:  GET
+
+
+adminCommandes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EcommerceBundle:CommandesAdmin:delete" }
+    methods:  DELETE

@@ -20,7 +20,7 @@
                             {% for produit in produits %}
                                 <li class="col-lg-3  ">
                                     <div class="img-thumbnail img_index">
-                                        <img src="{{ produit.image.path }}" alt="{{ produit.image.alt }}" width="200" height="200">
+                                        <img src="{{ asset('img/produits/' ~ produit.image.path) }}" alt="{{ produit.image.alt }}" width="200" height="200">
                                         <div class="caption">
                                             <h4>{{ produit.nom}}</h4>
                                             <p>{{ produit.prix|tva(produit.tva.multiplicate) }} Euros</p>

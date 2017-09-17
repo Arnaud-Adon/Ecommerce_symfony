@@ -27,19 +27,14 @@ class UtilisateursController extends Controller
                                                                                       ));
         
         if(!$facture){
-            $this->get('session')->getFlashBag('error','Une erreur est survenue');
-            
+            $this->get('session')->getFlashBag('error','Une erreur est survenue');           
             $this->render($this->generateUrl('factures'));
         }
         
    
         
-        $template = $this->renderView('UtilisateursBundle:Default:layout/pdf.html.twig',array('facture'=>$facture));
-        
-        $html2pdf = $this->get('ecommerce.html2pdf');
-        $html2pdf->create('P','A4','fr',true, 'UTF-8', array(10,15,10,15));
-        
-        return $html2pdf->generatePdf($template,"facture-".$facture->getReference());
+        $html2pdf=$this->get('setNewFacture');
+        $html2pdf->facture($facture);
         
     }
     
